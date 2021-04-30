@@ -1,6 +1,7 @@
 package com.zyg.service;
 
 import com.zyg.entity.Books;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -19,4 +20,7 @@ public interface BookService {
 
     //查询全部的书
     List<Books> queryAllBook();
+
+    //搜索书籍
+    Books queryBookByName(@Param("bookName") String bookName);
 }

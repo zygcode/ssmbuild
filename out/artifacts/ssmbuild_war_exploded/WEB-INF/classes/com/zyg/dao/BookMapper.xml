@@ -16,6 +16,7 @@
         update ssmbuild.books
         set bookName=#{bookName}, bookCounts=#{bookCounts},
             detail=#{detail}
+        where bookID=#{bookID}
     </update>
 
     <select id="queryBookById" resultType="Books">
@@ -26,5 +27,10 @@
     <select id="queryAllBook" resultType="Books">
         select *
         from ssmbuild.books;
+    </select>
+
+    <select id="queryBookByName" resultType="Books">
+        select *
+        from ssmbuild.books where bookName = #{bookName};
     </select>
 </mapper>
